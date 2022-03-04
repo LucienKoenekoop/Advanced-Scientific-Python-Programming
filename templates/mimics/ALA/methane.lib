@@ -1,0 +1,19 @@
+# Generated with q_ffld2q.py, version 0.7.1
+# Date: Tue Mar  1 10:48:10 2022
+#
+{MEH}
+    [atoms]
+        1  C1     meh.C1        -0.240000
+        2  H1     meh.H1         0.060000
+        3  H2     meh.H2         0.060000
+        4  H3     meh.H3         0.060000
+        5  H4     meh.H4         0.060000
+    [bonds]
+        C1    H1
+        C1    H2
+        C1    H3
+        C1    H4
+    [charge_groups]
+        C1 H1 H2 H3 H4
+*--------------------------------------------------------------------------------
+

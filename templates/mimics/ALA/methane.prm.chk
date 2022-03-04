@@ -1,0 +1,10 @@
+_TopoBond: (C1-H3)                        value:    1.09   eq.value:    1.09    dE:  0.00    # Prm: meh.C1-meh.H3
+_TopoBond: (C1-H1)                        value:    1.09   eq.value:    1.09    dE:  0.00    # Prm: meh.C1-meh.H1
+_TopoBond: (C1-H2)                        value:    1.09   eq.value:    1.09    dE:  0.00    # Prm: meh.C1-meh.H2
+_TopoBond: (C1-H4)                        value:    1.09   eq.value:    1.09    dE:  0.00    # Prm: meh.C1-meh.H4
+_TopoAngle: (H1-C1-H3)                    value:  109.40   eq.value:  107.80    dE:  0.03    # Prm: meh.H1-meh.C1-meh.H3
+_TopoAngle: (H1-C1-H4)                    value:  109.43   eq.value:  107.80    dE:  0.03    # Prm: meh.H1-meh.C1-meh.H4
+_TopoAngle: (H1-C1-H2)                    value:  109.46   eq.value:  107.80    dE:  0.03    # Prm: meh.H1-meh.C1-meh.H2
+_TopoAngle: (H3-C1-H4)                    value:  109.50   eq.value:  107.80    dE:  0.03    # Prm: meh.H3-meh.C1-meh.H4
+_TopoAngle: (H2-C1-H4)                    value:  109.51   eq.value:  107.80    dE:  0.03    # Prm: meh.H2-meh.C1-meh.H4
+_TopoAngle: (H2-C1-H3)                    value:  109.53   eq.value:  107.80    dE:  0.03    # Prm: meh.H2-meh.C1-meh.H3
