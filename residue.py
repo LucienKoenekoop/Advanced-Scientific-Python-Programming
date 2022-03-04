@@ -1,6 +1,7 @@
 import os
 import sys
 import pandas as pd
+from biopandas.pdb import PandasPdb
 
 """
 Module for conversion of molecule .pdb, .lib and .prm files to data structures.
@@ -38,13 +39,20 @@ class Residue(object):
                     read = True
         return lines
 
-    def get_pdb(self, pdb):
+    # def get_pdb(self, pdb_file):
+    #     """
+    #     Function for reading a .pdb file, returns it as a DataFrame object
+    #     """
+    #     headers = ['HET/ATOM', 'atom_num', 'atom_name', 'res_name', 'res_num', 'x', 'y', 'z', 'O', 'T', 'element']
+    #     self.pdb = pd.read_csv(pdb_file, names=headers, index_col=False, delim_whitespace=True)
+    #     # print(self.pdb)
+    #     return self.pdb
+
+    def get_pdb(self, pdb_file):
         """
-        Function for reading a .pdb file, returns it as a DataFrame object
+        Function for reading a .pdb file with Biopandas, returns a Biopandas DataFrame
         """
-        headers = ['HET/ATOM', 'atom_num', 'atom_name', 'res_name', 'res_num', 'x', 'y', 'z', 'O', 'T', 'element']
-        self.pdb = pd.read_csv(pdb, names=headers, index_col=False, delim_whitespace=True)
-        # print(self.pdb)
+        self.pdb = PandasPdb().read_pdb(pdb_file)
         return self.pdb
 
     def atom2type(self, atom):
@@ -132,7 +140,8 @@ class Residue(object):
         improper_types.insert(loc=2, column='atom2', value=improper_types['type2'].map(self.type2atom))
         improper_types.insert(loc=4, column='atom3', value=improper_types['type3'].map(self.type2atom))
         improper_types.insert(loc=6, column='atom4', value=improper_types['type4'].map(self.type2atom))
-        print(improper_types)
+        self.impropers = improper_types
+        return self.impropers
 
 
 # test = Residue('ALA/methane')
@@ -144,9 +153,9 @@ class Residue(object):
 
 # test2 = Residue('ARG/n-propylguanidine')
 # test2.get_atoms(test2.lib)
-# test2.get_atom_types(test2.prm)
-# test2.get_bonds(test2.lib)
-# test2.get_bond_types(test2.prm)
-# test2.get_angles(test2.prm)
-# test2.get_torsions(test2.prm)
+# # test2.get_atom_types(test2.prm)
+# # test2.get_bonds(test2.lib)
+# # test2.get_bond_types(test2.prm)
+# # test2.get_angles(test2.prm)
+# # test2.get_torsions(test2.prm)
 # test2.get_impropers(test2.prm)
